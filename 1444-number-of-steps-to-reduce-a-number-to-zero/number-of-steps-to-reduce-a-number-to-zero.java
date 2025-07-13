@@ -1,16 +1,17 @@
 class Solution {
     public int numberOfSteps(int num) {
-        
-        int even = num/2;
-        int odd = num-1;
+        return helper(num , 0);
+    }
+    private int helper(int num , int steps){
         if(num==0){
-            return 0;
+            return steps;
         }
+
         if(num%2==0){
-            return 1+numberOfSteps(even);
+            return helper(num/2 , steps+1);
         }
         else{
-            return 1+numberOfSteps(odd);
+            return helper(num-1 , steps+1);
         }
     }
 }
