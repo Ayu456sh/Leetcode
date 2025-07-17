@@ -1,7 +1,7 @@
 class Solution {
     public int trap(int[] height) {
-        int[] left = new int[height.length+1];
-        int[] right = new int[height.length+1];
+        int[] left = new int[height.length];
+        int[] right = new int[height.length];
 
         left[0]=height[0];
         for(int i=1; i<height.length; i++){
