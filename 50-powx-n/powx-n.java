@@ -1,6 +1,8 @@
 class Solution {
     public double myPow(double x, int n) {
-        if(n==0)return 1;
+        if(n==0){
+            return 1;
+        }
 
         double half = myPow(x,n/2);
 
@@ -11,6 +13,5 @@ class Solution {
             return half*half/x;
         }
         return half*half*x;
-
     }
 }
