@@ -1,20 +1,25 @@
 class Solution {
     public boolean isHappy(int n) {
-        HashSet<Integer> mp = new HashSet<>();
-        
-        while(n!=1 ){
-            if(mp.contains(n)){
-                return false;
-            }
-            mp.add(n);
-        int add=0;
+        int slow=n;
+        int fast=n;
+
+        do{
+            slow=isSquare(slow);
+            fast=isSquare(isSquare(fast));
+        }while(slow!=fast);
+
+        if(slow==1){
+            return true;
+        }
+        return false;
+    }
+    private int isSquare(int n){
+        int ans=0;
         while(n>0){
-            int digit =n%10;
-            add+=digit*digit;
+            int rem = n%10;
+            ans+=rem*rem;
             n=n/10;
         }
-        n=add;
-    }
-        return n==1;
+        return ans;
     }
 }
