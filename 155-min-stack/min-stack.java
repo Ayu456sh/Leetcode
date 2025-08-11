@@ -1,6 +1,6 @@
 class MinStack {
 
-     Stack<Pair<Integer,Integer>> st;
+    private Stack<Pair<Integer,Integer>> st;
 
     public MinStack() {
         this.st = new Stack();
