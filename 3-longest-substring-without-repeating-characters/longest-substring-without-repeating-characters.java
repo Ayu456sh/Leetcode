@@ -3,17 +3,18 @@ class Solution {
         if(s.isEmpty()){
             return 0;
         }
-        HashMap<Character,Integer> mp = new HashMap<>();
+        HashMap<Character,Integer> map = new HashMap<>();
 
-        int max = Integer.MIN_VALUE;
         int start=0;
+        int max=Integer.MIN_VALUE;
+
         for(int i=0; i<s.length(); i++){
-            char c = s.charAt(i);
-            if(mp.containsKey(c)){
-                start=Math.max(start,mp.get(c)+1);
+            char ch = s.charAt(i);
+            if(map.containsKey(ch)){
+                start=Math.max(start,map.get(ch)+1);
             }
-            mp.put(c,i);
-            max = Math.max(max,i-start+1);
+            map.put(ch,i);
+            max=Math.max(max,i-start+1);
         }
         return max;
     }
