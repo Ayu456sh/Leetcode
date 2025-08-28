@@ -15,7 +15,7 @@ class Solution {
                 mp.put(ch,mp.get(ch)+1);
             }
             maxFreq = Math.max(maxFreq , mp.get(ch));
-            while((i-start+1)-maxFreq > k){
+            if((i-start+1)-maxFreq > k){
                 mp.put(s.charAt(start),mp.get(s.charAt(start))-1);
                 start++;
             }
