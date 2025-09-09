@@ -13,13 +13,13 @@ class Solution {
     }
 
     private boolean exists(char[][] board , int i, int j , char[] word , int idx){
-
+        if(idx==word.length){
+            return true;
+        }
         if(i<0 || i>=board.length || j<0 || j>=board[0].length ||board[i][j]=='*' || board[i][j]!=word[idx]){
             return false;
         }
-        if(idx==word.length-1){
-            return true;
-        }
+        
         char ch = board[i][j];
         board[i][j]='*';
         boolean res = exists(board,i+1,j,word,idx+1) ||
