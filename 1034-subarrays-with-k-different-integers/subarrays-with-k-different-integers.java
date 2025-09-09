@@ -17,11 +17,14 @@ class Solution {
             else{
                 mp.put(nums[end],mp.get(nums[end])+1);
             }
+            if(mp.get(nums[end])==1){
+                freq++;
+            }
 
-            while(mp.size()>k){
+            while(freq>k){
                 mp.put(nums[start],mp.get(nums[start])-1);
                 if(mp.get(nums[start])==0){
-                    mp.remove(nums[start]);
+                    freq--;
                 }
                 start++;
             }
