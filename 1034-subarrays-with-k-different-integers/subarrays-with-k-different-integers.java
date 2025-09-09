@@ -8,7 +8,7 @@ class Solution {
         int start=0;
         int end =0;
         int count=0;
-        int freq=0;
+
 
         while(end<nums.length){
             if(!mp.containsKey(nums[end])){
@@ -17,14 +17,11 @@ class Solution {
             else{
                 mp.put(nums[end],mp.get(nums[end])+1);
             }
-            if(mp.get(nums[end])==1){
-                freq++;
-            }
 
-            while(freq>k){
+            while(mp.size()>k){
                 mp.put(nums[start],mp.get(nums[start])-1);
                 if(mp.get(nums[start])==0){
-                    freq--;
+                    mp.remove(nums[start]);
                 }
                 start++;
             }
