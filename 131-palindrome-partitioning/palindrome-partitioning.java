@@ -10,7 +10,7 @@ class Solution {
             ans.add(new ArrayList<>(ds));
             return;
         }
-        for(int i=idx; i<s.length(); ++i){
+        for(int i=idx; i<s.length(); i++){
             if(isPalindrome(s,idx,i)){
                 ds.add(s.substring(idx,i+1));
                 helper(i+1,s,ds,ans);
