@@ -19,9 +19,10 @@ class Solution {
 
         return merge(left,right);
     }
-    private ListNode merge(ListNode list1 , ListNode list2){
+    private ListNode merge(ListNode list1, ListNode list2){
         ListNode ans = new ListNode();
         ListNode curr = ans;
+
         while(list1!=null && list2!=null){
             if(list1.val<list2.val){
                 curr.next=list1;
@@ -46,16 +47,17 @@ class Solution {
         return ans.next;
     }
     private ListNode getMid(ListNode head){
-        ListNode slow = head;
-        ListNode fast = head;
-        ListNode prev = null;
+        ListNode slow=head;
+        ListNode fast=head;
+        ListNode prev=null;
+
         while(fast!=null && fast.next!=null){
-            prev = slow;
+            prev=slow;
             slow=slow.next;
             fast=fast.next.next;
         }
-        if (prev != null) {
-            prev.next = null;
+        if(prev!=null){
+            prev.next=null;
         }
         return slow;
     }
