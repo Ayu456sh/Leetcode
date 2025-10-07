@@ -5,7 +5,7 @@ class Solution {
         helper(0,s,ds,ans);
         return ans;
     }
-    private void helper(int idx,String s,List<String>ds , List<List<String>> ans){
+    private void helper(int idx , String s , List<String> ds , List<List<String>> ans){
         if(idx==s.length()){
             ans.add(new ArrayList<>(ds));
             return;
@@ -18,7 +18,7 @@ class Solution {
             }
         }
     }
-    private boolean isPalindrome(String s, int start, int end){
+    private boolean isPalindrome(String s , int start, int end){
         while(start<=end){
             if(s.charAt(start)!=s.charAt(end)){
                 return false;
