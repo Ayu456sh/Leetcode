@@ -12,7 +12,7 @@ class Solution:
             else:
                 dic[fruits[end]]=1
 
-            if len(dic)>2:
+            while len(dic)>2:
                 dic[fruits[start]]-=1
                 if dic[fruits[start]]==0:
                     del dic[fruits[start]]
