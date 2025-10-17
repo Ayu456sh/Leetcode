@@ -3,8 +3,8 @@ class Solution {
         HashMap<Integer,Integer> mp = new HashMap<>();
 
         int start=0;
-        int end =0;
-        int length=0;
+        int end=0;
+        int len=0;
 
         while(end<fruits.length){
             if(!mp.containsKey(fruits[end])){
@@ -13,7 +13,6 @@ class Solution {
             else{
                 mp.put(fruits[end],mp.get(fruits[end])+1);
             }
-
             if(mp.size()>2){
                 mp.put(fruits[start],mp.get(fruits[start])-1);
                 if(mp.get(fruits[start])==0){
@@ -22,10 +21,10 @@ class Solution {
                 start++;
             }
             else if(mp.size()<=2){
-                length=Math.max(length,end-start+1);
+                len=Math.max(len,end-start+1);
             }
             end++;
         }
-        return length;
+        return len;
     }
 }
