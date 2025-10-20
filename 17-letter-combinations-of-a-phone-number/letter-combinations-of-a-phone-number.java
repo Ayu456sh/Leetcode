@@ -6,21 +6,21 @@ class Solution {
         }
         return helper("",digits);
     }
-    private List<String> helper(String p , String up){
+    private List<String> helper(String p ,String up){
         if(up.isEmpty()){
-            List<String> list = new ArrayList<>();
-            list.add(p);
-            return list;
+            List<String> ans = new ArrayList<>();
+            ans.add(p);
+            return ans;
         }
         int num = up.charAt(0)-'0';
-        List<String> list = new ArrayList<>();
+        ArrayList<String> ans = new ArrayList<>();
+        String letter=getLetters(num);
 
-        String letter = getLetters(num);
         for(int i=0; i<letter.length(); i++){
             char ch = letter.charAt(i);
-            list.addAll(helper(p+ch,up.substring(1)));
+            ans.addAll(helper(p+ch,up.substring(1)));
         }
-        return list;
+        return ans;
     }
     private String getLetters(int num){
         switch(num){
