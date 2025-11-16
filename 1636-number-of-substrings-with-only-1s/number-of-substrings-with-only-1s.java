@@ -9,13 +9,10 @@ class Solution {
                 ones+=1;
             }
             else{
-                long sum=(ones*(ones+1)/2)%mod;
-                result=(result+sum)%mod;
                 ones=0;
             }
+            result=(result+ones)%mod;
         }
-        long sum=(ones*(ones+1)/2)%mod;
-        result=(result+sum)%mod;
         return (int)result;
     }
 }
