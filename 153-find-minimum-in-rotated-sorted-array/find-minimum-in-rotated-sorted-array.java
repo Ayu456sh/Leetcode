@@ -9,6 +9,7 @@ class Solution {
 
         while(start<end){
             int mid = start+(end-start)/2;
+
             if(nums[mid]>nums[end]){
                 start=mid+1;
             }
@@ -16,6 +17,6 @@ class Solution {
                 end=mid;
             }
         }
-        return nums[start];
+        return nums[end];
     }
 }
