@@ -3,12 +3,11 @@ class Solution {
         List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(nums);
         int n = nums.length;
-
         for(int i=0; i<n-2; i++){
             if(i>0 && nums[i]==nums[i-1])continue;
 
             int start=i+1;
-            int end =n-1;
+            int end =nums.length-1;
 
             while(start<end){
                 int sum = nums[i]+nums[start]+nums[end];
